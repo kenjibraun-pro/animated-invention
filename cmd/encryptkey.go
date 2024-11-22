@@ -50,5 +50,5 @@ func encryptKey(ctx *cli.Context) error {
 	if _, err := ks.ImportECDSA(privateKey, password); err != nil {
 		log.Fatal("Failed to encrypt private key: ", err)
 	}
-	return nil
+	return nil   
 }
