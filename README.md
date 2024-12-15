@@ -45,7 +45,7 @@ The diagram represents the main components of the software and how they interact
 - Prover/Executor/hashDB: service that generates ZK proofs. Note that this component is not implemented in this repository, and it's treated as a "black box" from the perspective of the node. The prover/executor has two implementations: [JS reference implementation](https://github.com/0xPolygonHermez/zkevm-proverjs) and [C production-ready implementation](https://github.com/0xPolygonHermez/zkevm-prover). Although it's the same software/binary, it implements three services:
   - Executor: Provides an EVM implementation that allows processing batches as well as getting metadata (state root, transaction receipts, logs, ...) of all the needed results.
   - Prover: Generates ZKPs for batches, batches aggregation, and final proofs.
-  - HashDB: service that stores the Merkletree, containing all the account information (balances, nonces, smart contract code, and smart contract storage)
+  - HashDB: service that stores the Merkletree, containing all the account information (balances, nonces, smart contract code, and smart contract storage)                             
 
 ## Roles of the network
 
@@ -65,7 +65,7 @@ Required services and components:
 There must be only one synchronizer, and it's recommended that it has exclusive access to an executor instance, although it's not necessary. This role can perfectly be run in a single instance, however, the JSON RPC and executor services can benefit from running in multiple instances, if the performance decreases due to the number of requests received
 
 - [`zkEVM RPC endpoints`](./docs/json-rpc-endpoints.md)
-- [`zkEVM RPC Custom endpoints documentation`](./docs/zkEVM-custom-endpoints.md)
+- [`zkEVM RPC Custom endpoints documentation`](./docs/zkEVM-custom-endpoints.md)                        
 
 ### Trusted sequencer
 
@@ -81,7 +81,7 @@ Required services and components:
 
 Note that the JSON RPC is required to receive transactions. It's recommended that the JSON RPC runs on separated instances, and potentially more than one (depending on the load of the network). It's also recommended that the JSON RPC and the Sequencer don't share the same executor instance, to make sure that the sequencer has exclusive access to an executor
 
-### Aggregator
+### Aggregator                                
 
 This role can be performed by anyone.
 
@@ -109,12 +109,12 @@ It's recommended to use `make` for building, and testing the code, ... Run `make
 
 - Go 1.21
 - Docker
-- Docker Compose
+- Docker Compose               
 - Make
 - GCC
 
 ## Contribute
 
-Before opening a pull request, please read this [guide](CONTRIBUTING.md).
+Before opening a pull request, please read this [guide](CONTRIBUTING.md).                  
 
 
